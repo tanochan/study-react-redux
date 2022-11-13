@@ -1,5 +1,6 @@
 import React from "react";
 
+// Propsはconnect()でマッピングしたものが渡される
 export default function Count({ count, handleClick }) {
     return (
         <div>

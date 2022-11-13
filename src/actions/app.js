@@ -4,6 +4,11 @@
 //     decrement: () => ({ type: "DECREMENT" }),
 // }
 
+// Action Creatorは、アクションを返す関数
 export function increment() {
-    return { type: "INCREMENT" };
+    // action
+    return {
+        type: "INCREMENT",
+        text: "カウント増加"
+    };
 }

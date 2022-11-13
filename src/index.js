@@ -7,6 +7,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducer';
 
+// アプリケーションでの状態を保持する
+// -> stateを保持する
+// -> stateへアクセスするためのgetState()を提供する
+// -> stateを更新するためのdispatch()を提供する
+// -> listenerを登録ためのsubscribe()を提供する
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -14,6 +19,7 @@ const store = createStore(
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // componentにstoreを渡すためにProviderでラップする
   <Provider store={store}>
     <React.StrictMode>
       <App />
