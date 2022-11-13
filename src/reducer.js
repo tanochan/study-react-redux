@@ -15,6 +15,7 @@ export default function reducer(state = initialState, action) {
                 count: state.count - 1
             }
         default:
+            // INCREMENT_ASYNCのときはここを通る
             return state
     }
 }
