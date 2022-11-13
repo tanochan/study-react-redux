@@ -12,3 +12,10 @@ export function increment() {
         text: "カウント増加"
     };
 }
+
+export function decrement() {
+    return {
+        type: "DECREMENT",
+        text: "カウント減少"
+    };
+}
