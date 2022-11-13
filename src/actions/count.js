@@ -5,7 +5,7 @@
 // }
 
 // Action Creatorは、アクションを返す関数
-export function increment() {
+export function incrementAction() {
     // action
     return {
         type: "INCREMENT",
@@ -13,9 +13,16 @@ export function increment() {
     };
 }
 
-export function decrement() {
+export function decrementAction() {
     return {
         type: "DECREMENT",
         text: "カウント減少"
     };
+}
+
+export function incrementAsyncAction() {
+    return {
+        type: "INCREMENT_ASYNC",
+        text: "1000ms遅延"
+    }
 }
