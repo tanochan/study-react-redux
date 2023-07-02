@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Count from "../components/Count";
-import { increment, decrement } from "../actions/count";
+import { increment, decrement, incrementAsync } from "../actions/count";
 
 // StoreのStateをPropsにマッピング（state取得）
 function mapStateToProps(state) {
@@ -16,6 +16,7 @@ function mapDispatchToProps(dispatch) {
     // Action関数をStoreにDispatchする
     onIncrement: () => dispatch(increment()),
     onDecrement: () => dispatch(decrement()),
+    onIncrementAsync: () => dispatch(incrementAsync())
   }
 }
 

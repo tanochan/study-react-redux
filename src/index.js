@@ -4,8 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import reducer from './reducer';
+import rootSaga from './sagas';
+import createSagaMiddleware from '@redux-saga/core';
+
+const sagaMiddleware = createSagaMiddleware()
 
 // アプリケーションでの状態を保持する
 // -> stateを保持する
@@ -14,8 +18,11 @@ import reducer from './reducer';
 // -> listenerを登録ためのsubscribe()を提供する
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(sagaMiddleware),
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
+sagaMiddleware.run(rootSaga)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

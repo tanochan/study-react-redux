@@ -6,6 +6,7 @@
 
 // Action Creatorは、アクションを返す関数
 export function increment() {
+    console.log("action: increment")
     // action
     return {
         type: "INCREMENT",
@@ -14,8 +15,18 @@ export function increment() {
 }
 
 export function decrement() {
+    console.log("action: decrement")
     return {
         type: "DECREMENT",
         text: "カウント減少"
     };
+}
+
+// saga使わず実装
+export function incrementAsync() {
+    console.log("action: incrementAsync")
+    return {
+        type: "INCREMENT_ASYNC",
+        text: "非同期カウント増加"
+    }
 }
