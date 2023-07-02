@@ -1,7 +1,7 @@
 import React from "react";
 
 // Propsはconnect()でマッピングしたものが渡される
-export default function Count({ count, onIncrement, onDecrement }) {
+export default function Count({ count, onIncrement, onDecrement, onIncrementAsync }) {
     return (
         <div>
             <button onClick={onIncrement}>
@@ -10,6 +10,10 @@ export default function Count({ count, onIncrement, onDecrement }) {
             {' '}
             <button onClick={onDecrement}>
                 Decrement
+            </button>
+            {' '}
+            <button onClick={onIncrementAsync}>
+                IncrementAsync
             </button>
             <hr />
             <div>
